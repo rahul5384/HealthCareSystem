@@ -1,0 +1,391 @@
+<!--
+This is the Maven POM (Project Object Model) file for the HealthCareSystem project.
+It contains the project configuration, dependencies, and other build-related information.
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- The model version of the POM -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- The group ID of the project -->
+  <groupId>com.rahul.healthcare</groupId>
+  
+  <!-- The artifact ID of the project -->
+  <artifactId>HealthCareSystem</artifactId>
+  
+  <!-- The version of the project -->
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- The packaging type of the project -->
+  <packaging>jar</packaging>
+
+  <!-- The name of the project -->
+  <name>HealthCareSystem</name>
+  
+  <!-- The URL of the project -->
+  <url>http://maven.apache.org</url>
+
+  <!-- The properties used in the project -->
+  <properties>
+    <!-- The encoding for the project source files -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <!-- The version of MapStruct library -->
+    <mapstruct.version>1.5.5.Final</mapstruct.version> <!-- Use the latest version -->
+    
+    <!-- The version of Springdoc OpenAPI library -->
+    <springdoc-openapi.version>2.0.4</springdoc-openapi.version> <!-- Use the latest version -->
+  </properties>
+
+  <!-- The dependencies used in the project -->
+  <dependencies>
+    <!-- Spring Boot Starter Web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>3.2.4</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-hateoas</artifactId>
+    	<version>3.2.4</version>
+	</dependency>
+    <!-- Spring Data JPA -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        <version>3.1.3</version>
+    </dependency>
+    
+    <!-- H2 Database -->
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <version>2.2.224</version>
+        <scope>runtime</scope>
+    </dependency>
+    
+    <!-- MapStruct -->
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>${mapstruct.version}</version>
+    </dependency>
+    
+    <!-- Springdoc OpenAPI UI -->
+    <!--<dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-ui</artifactId>
+        <version>${springdoc-openapi.version}</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springdoc</groupId>
+    	<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    	<version>${springdoc-openapi.version}</version>
+	</dependency>-->
+    
+    <!-- Spring Boot Starter Test -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>3.2.4</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- Azure Storage Blob -->
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-storage-blob</artifactId>
+        <version>12.14.0</version>
+    </dependency>
+    
+    <!-- Azure Identity -->
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-identity</artifactId>
+        <version>1.5.4</version>
+    </dependency>
+    
+    <!-- Azure Storage -->
+    <dependency>
+        <groupId>com.microsoft.azure</groupId>
+        <artifactId>azure-storage</artifactId>
+        <version>8.6.6</version>
+    </dependency>
+    
+    <!-- JSON Web Token (JWT) API -->
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>0.11.5</version>
+    </dependency>
+    
+    <!-- JSON Web Token (JWT) Implementation -->
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    
+    <!-- JSON Web Token (JWT) Jackson -->
+    <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>0.11.5</version>
+        <scope>runtime</scope>
+    </dependency>
+    
+    <!-- Spring Zeebe Starter -->
+    <dependency>
+        <groupId>io.camunda</groupId>
+        <artifactId>spring-zeebe-starter</artifactId>
+        <version>1.1.0</version>
+    </dependency>
+    
+    <!-- Hibernate Validator -->
+    <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>7.0.1.Final</version>
+    </dependency>
+    
+    <!-- Apache Commons Collections -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>4.4</version>
+    </dependency>
+    
+    <!-- Project Lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.22</version>
+        <scope>provided</scope>
+    </dependency>
+    
+    <!-- Apache POI -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+    
+    <!-- Apache POI OOXML -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.3</version>
+        <scope>compile</scope>
+    </dependency>
+    
+    <!-- HealthCare API Server -->
+    <!--<dependency>
+        <groupId>com.rahul.healthcare</groupId>
+        <artifactId>healthCareApi</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>-->
+    <dependency>
+        <groupId>com.rahul.healthcare</groupId>
+        <artifactId>healthcare-api-server</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <scope>system</scope>
+        <systemPath>C:\capgemini\cnh\tidb\m3\com\rahul\healthcare\healthcare-api-server\0.0.1-SNAPSHOT\healthcare-api-server-0.0.1-SNAPSHOT.jar</systemPath>
+    </dependency>
+    
+    <!--                additional dependency                       -->
+    
+        <!-- Add the fixed dependencies below -->
+    <!-- Plexus Utils -->
+    <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-utils</artifactId>
+        <version>3.0.20</version>
+    </dependency>
+    
+    <!-- Plexus Classworlds -->
+    <dependency>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-classworlds</artifactId>
+        <version>2.5.2</version>
+    </dependency>
+    
+    <!-- Guava -->
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>24.1.1-jre</version>
+    </dependency>
+    
+    <!-- Jackson Annotations -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.12.4</version>
+    </dependency>
+    
+    <!-- Jackson Databind -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.12.6.1</version>
+    </dependency>
+    
+    <!-- Jackson Dataformat YAML -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.dataformat</groupId>
+        <artifactId>jackson-dataformat-yaml</artifactId>
+        <version>2.12.3</version>
+    </dependency>
+    
+    <!-- Swagger Models -->
+    <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-models</artifactId>
+        <version>1.5.20</version>
+    </dependency>
+    
+    <!-- Maven Artifact -->
+    <dependency>
+        <groupId>org.apache.maven</groupId>
+        <artifactId>maven-artifact</artifactId>
+        <version>3.2.5</version>
+    </dependency>
+    
+    <!-- Commons Lang3 -->
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.4</version>
+    </dependency>
+    
+    <!-- SLF4J API -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.12</version>
+    </dependency>
+    
+    <!-- Swagger Core -->
+    <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-core</artifactId>
+        <version>1.6.6</version>
+    </dependency>
+    
+    <!-- Swagger Parser -->
+    <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-parser</artifactId>
+        <version>1.0.59</version>
+    </dependency>
+    
+    <!-- Swagger Compat Spec Parser -->
+    <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-compat-spec-parser</artifactId>
+        <version>1.0.59</version>
+    </dependency>
+    
+    <!-- FindBugs JSR305 -->
+    <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>1.3.9</version>
+    </dependency>
+    
+    <!-- Commons Codec -->
+    <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>1.15</version>
+    </dependency>
+    
+    <!-- Swagger Models -->
+    <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-models</artifactId>
+        <version>2.1.2</version>
+    </dependency>
+
+    <!-- Jackson Datatype JSR310 -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-jsr310</artifactId>
+        <version>2.15.4</version>
+    </dependency>
+    
+    <!-- Swagger Annotations -->
+    <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>2.1.2</version>
+    </dependency>
+    
+    <!-- Jakarta Validation API -->
+    <dependency>
+        <groupId>jakarta.validation</groupId>
+        <artifactId>jakarta.validation-api</artifactId>
+        <version>3.0.0</version>
+    </dependency>
+    
+    <!-- JMustache -->
+    <dependency>
+        <groupId>com.samskivert</groupId>
+        <artifactId>jmustache</artifactId>
+        <version>1.15</version>
+    </dependency>
+    
+    <!-- Logback Classic -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.4.14</version>
+    </dependency>
+    
+    <!-- Byte Buddy -->
+    <dependency>
+        <groupId>net.bytebuddy</groupId>
+        <artifactId>byte-buddy</artifactId>
+        <version>1.12.18</version>
+    </dependency>
+    
+    <!-- Spring Beans -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>6.1.5</version>
+    </dependency>
+    
+    <!-- Spring Context -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>6.1.5</version>
+    </dependency>
+    
+    <!-- Spring AOP -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>6.1.5</version>
+    </dependency>
+    
+    <!-- Jackson Core -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.9.4</version>
+    </dependency>
+
+<dependency>
+    <groupId>javax.persistence</groupId>
+    <artifactId>javax.persistence-api</artifactId>
+    <version>2.2</version>
+</dependency>
+  </dependencies>
+</project>
